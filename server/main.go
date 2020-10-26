@@ -10,15 +10,12 @@ import (
 func main() {
     r := gin.Default()
 
-    config = cors.Config{
-      AllowOrigins: []string{"http://localhost:8080"},
-      AllowMethods: []string{"GET", "POST", "DELETE", "OPTIONS"},
-      AllowHeaders: []string{"*"},
-    }
 
-    corsObj = cors.New(config)
-
-    r.Use(corsObj)
+    r.GET("/", func(c *gin.Context) {
+      c.JSON(200, gin.H{
+        "message" : "ping",
+      })
+    })
 
     r.POST("/images", handler.Upload)
 
