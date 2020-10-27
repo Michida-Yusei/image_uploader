@@ -13,11 +13,13 @@ import (
  * gin.Context にはアップロードされたfile達を処理するための、メソッドがいくつか生えている。
  */
 func Upload(c *gin.Context) {
+  println("hello")
+
   form, _ := c.MultipartForm()
   files := form.File["file"]
 
   for _, file := range files {
-    err := c.SaveUploadedFile(file, "images/" + file.Filename)
+    err := c.SaveUploadedFile(file, "images/"+file.Filename)
     if err != nil {
       c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
     }

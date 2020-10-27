@@ -1,7 +1,7 @@
 package main // import "server"
 
 import (
-  "server/handler"
+  "./handler"
 
   "github.com/gin-contrib/cors" // gin 用のCORS設定パッケージ
   "github.com/gin-gonic/gin"    // フレームワーク
@@ -16,6 +16,11 @@ func main() {
         "message" : "ping",
       })
     })
+    r.Use(cors.New(cors.Config{
+     AllowOrigins: []string{"http://localhost:8080"},
+     AllowMethods: []string{"GET", "POST", "DELETE", "OPTIONS"},
+     AllowHeaders: []string{"*"},
+    }))
 
     r.POST("/images", handler.Upload)
 
