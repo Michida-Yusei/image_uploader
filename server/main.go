@@ -24,7 +24,7 @@ func main() {
 
     r.POST("/images", handler.Upload)
 
-    r.DELETE("/images:uuid", handler.Delete)
+    r.DELETE("/images/:uuid", handler.Delete)
 
     r.Run(":8888")
 }

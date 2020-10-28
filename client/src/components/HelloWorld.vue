@@ -36,12 +36,12 @@
       },
       removeEvent: function (file) {
         axios
-          .delete(`http://localhost:8888/images/${file.upload.uuid}`)
-          .then(res => {
-            console.log(res.data)
-          }).catch(err => {
-            console.error(err)
-          })
+        .delete(`http://localhost:8888/images/${file.upload.uuid}`)
+        .then(res => {
+          console.log(res.data)
+        }).catch(err => {
+          console.error(err)
+        })
       }
     }
   }
