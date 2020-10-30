@@ -37,6 +37,7 @@ func Upload(c *gin.Context) {
  */
 func Delete(c *gin.Context) {
   uuid := c.Param("uuid")
+  
   err := os.Remove(fmt.Sprintf("images/%s.png", uuid))
   if err != nil {
     fmt.Println(err.Error())
