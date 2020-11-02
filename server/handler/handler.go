@@ -13,8 +13,6 @@ import (
  * gin.Context にはアップロードされたfile達を処理するための、メソッドがいくつか生えている。
  */
 func Upload(c *gin.Context) {
-  println("hello")
-
   form, _ := c.MultipartForm()
   files := form.File["file"]
 
