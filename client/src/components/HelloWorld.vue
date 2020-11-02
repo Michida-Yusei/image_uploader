@@ -3,7 +3,6 @@
 
     <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"
                   v-on:vdropzone-sending="sendingEvent"
-                  v-on:vdropzone-removed-file="removeEvent"
     ></vue-dropzone>
 
   </div>
@@ -21,8 +20,6 @@
         dropzoneOptions: {
           url: `http://localhost:8888/images`,
           method: 'post',
-          addRemoveLinks: 'true',
-          dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>UPLOAD ME"
         }
       }
     },
