@@ -14,7 +14,7 @@
   import axios from 'axios'
 
   export default {
-    name: 'HelloWorld',
+    name: 'ImageUpload',
     data: function () {
       return {
         dropzoneOptions: {
