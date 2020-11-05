@@ -1,3 +1,4 @@
 .idea/
 *.log
 server/tmp/
+server/images/
